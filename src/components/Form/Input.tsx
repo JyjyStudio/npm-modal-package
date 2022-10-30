@@ -10,8 +10,8 @@ export default function Input({ type, name, value, setFunction, min, required }:
 
 	return (
 		<Container>
-			<Label htmlFor={name}>{formatName(name)}</Label>
-			<StyledInput
+			<label htmlFor={name}>{formatName(name)}</label>
+			<input
 				type={type}
 				id={name}
 				name={name}
@@ -35,10 +35,4 @@ interface Props {
 const Container = styled.div`
 	display: flex;
 	flex-direction: column;
-`
-const Label = styled.label`
-	margin: 5px 0;
-`
-const StyledInput = styled.input`
-
 `
