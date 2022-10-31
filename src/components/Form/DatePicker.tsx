@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import type { Value } from 'react-multi-date-picker'
 import DatePicker from 'react-multi-date-picker'
-import transition from 'react-element-popper/animations/transition'
+import ElementPopper from "react-element-popper"
+import transition from "react-element-popper/animations/transition"
 import InputIcon from "react-multi-date-picker/components/input_icon"
 
 export default function DPicker({ label, maxDate, required }: Props) {
