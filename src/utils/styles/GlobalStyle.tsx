@@ -32,4 +32,16 @@ const StyledGlobalStyle = createGlobalStyle`
 		scroll-behavior: smooth;
 	}
 
+	input {
+        width: 100%;
+		padding: 5px !important;
+		margin-bottom: 5px !important;
+		font-size: 1rem !important;
+		height: auto !important;
+		border-radius: 0 !important;
+		border: 1px solid #c0c4d6;
+    }
+	label {
+		margin: 5px 0;
+	}
 `
