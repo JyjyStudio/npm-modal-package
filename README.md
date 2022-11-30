@@ -1,4 +1,4 @@
-#  HRnet - Table plugin
+#  HRnet - Modal plugin
 
 HRnet is an online application for managing your team. Project 14 of the OpenClassrooms "Web app developer - JavaScript React" course. For this project I'm using [TypeScript](https://www.typescriptlang.org/), [NextJs](https://nextjs.org/).
 
