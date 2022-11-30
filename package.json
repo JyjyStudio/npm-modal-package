@@ -1,32 +1,25 @@
 {
-  "name": "hrnet",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "name": "simple-react-modal-plugin",
+  "version": "0.1.0",
+  "description": "The simplest responsive modal component for react projects.",
+  "main": "index.tsx",
   "scripts": {
-    "dev": "vite --open",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "@reduxjs/toolkit": "^1.8.6",
-    "@types/node": "^18.11.3",
-    "@types/styled-components": "^5.1.26",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-element-popper": "^2.1.6",
-    "react-icons": "^4.6.0",
-    "react-multi-date-picker": "^3.3.4",
-    "react-redux": "^8.0.4",
-    "react-router-dom": "^6.4.2",
-    "redux-persist": "^6.0.0",
-    "styled-components": "^5.3.6"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JyjyStudio/npm-modal-package.git"
   },
-  "devDependencies": {
-    "@types/react": "^18.0.17",
-    "@types/react-dom": "^18.0.6",
-    "@vitejs/plugin-react": "^2.1.0",
-    "typescript": "^4.6.4",
-    "vite": "^3.1.0"
-  }
+  "keywords": [
+    "modal",
+    "react-modal-component",
+    "modal-plugin",
+    "hrnet"
+  ],
+  "author": "JyjyStudio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JyjyStudio/npm-modal-package/issues"
+  },
+  "homepage": "https://github.com/JyjyStudio/npm-modal-package#readme"
 }
