@@ -5,7 +5,7 @@ The simplest responsive modal component for react projects.
 **Useful links:**
 
 -   [Modal plugin package 📖](https://www.npmjs.com/package/simple-react-modal-plugin)
--   [Storybook 📖](https://jyjystudio.github.io/npm-modal-package/?path=/story/library-modal--getting-started)
+-   [Storybook 📖](https://jyjystudio.github.io/npm-modal-package/)
 
 
 ## Setup
