@@ -1,10 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-/**
- * 
- * a simple modal component.
- */
 export const Modal:React.FC<Props> = ({ children, setModal, overlay_color="rgba(49,49,49,0.8)", modal_color="white", text_color="black" }: Props): JSX.Element => {
 	return (
 		<div className='modal'>
