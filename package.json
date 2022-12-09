@@ -1,25 +1,45 @@
 {
-  "name": "simple-react-modal-plugin",
-  "version": "0.1.0",
-  "description": "The simplest responsive modal component for react projects.",
-  "main": "index.tsx",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JyjyStudio/npm-modal-package.git"
-  },
-  "keywords": [
-    "modal",
-    "react-modal-component",
-    "modal-plugin",
-    "hrnet"
-  ],
-  "author": "JyjyStudio",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/JyjyStudio/npm-modal-package/issues"
-  },
-  "homepage": "https://github.com/JyjyStudio/npm-modal-package#readme"
+	"name": "simple-react-modal-plugin",
+	"version": "0.5.0",
+	"description": "The simplest responsive modal component for react projects.",
+	"license": "MIT",
+	"author": "JyjyStudio",
+	"main": "index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/JyjyStudio/npm-modal-package.git"
+	},
+	"keywords": [
+		"modal",
+		"react-modal-component",
+		"modal-plugin",
+		"simple-modal",
+		"hrnet"
+	],
+	"bugs": {
+		"url": "https://github.com/JyjyStudio/npm-modal-package/issues"
+	},
+	"homepage": "https://github.com/JyjyStudio/npm-modal-package#readme",
+	"devDependencies": {
+		"@testing-library/jest-dom": "^5.16.5",
+		"@testing-library/react": "^13.4.0",
+		"@testing-library/user-event": "^13.5.0",
+		"@types/node": "18.11.9",
+		"@types/react": "18.0.24",
+		"@types/react-dom": "18.0.8",
+		"@types/styled-components": "^5.1.26",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"styled-components": "5.3.6",
+		"typescript": "4.9.3"
+	},
+	"peerDependencies": {
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"styled-components": "5.3.6"
+	},
+	"scripts": {
+		"clean": "rm -rf lib",
+		"build": "npm run clean && tsc && cp package.json README.md ./lib"
+	}
 }
