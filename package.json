@@ -50,8 +50,8 @@
 		"styled-components": "5.3.6"
 	},
 	"scripts": {
-		"clean": "rm -rf lib",
-		"build": "npm run clean && tsc && cp package.json README.md ./lib",
+		"clean-lib": "rm -rf lib",
+		"build-lib": "npm run clean-lib && tsc && cp package.json README.md ./lib",
 		"predeploy-storybook": "npm run build-storybook",
 		"deploy-storybook": "gh-pages -d storybook-static",
 		"storybook": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
