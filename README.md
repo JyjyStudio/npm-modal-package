@@ -50,5 +50,5 @@ export default ModalTester
 
 **Useful links:**
 
--   [Modal plugin repository 📖](https://https://github.com/JyjyStudio/npm-modal-package)
+-   [Modal plugin package 📖](https://www.npmjs.com/package/simple-react-modal-plugin)
 -   [Storybook 📖](https://jyjystudio.github.io/npm-modal-package/?path=/story/library-modal--getting-started)
