@@ -8,3 +8,7 @@
 
 # production
 /lib
+
+#documentation
+/storybook
+/storybook-static
