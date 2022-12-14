@@ -2,7 +2,7 @@
 
 ## Setup
 
-This library is available on npm, install it with: npm i simple-react-modal-plugin or yarn add simple-react-modal-plugin.
+This library is available on npm, install it with: `npm i simple-react-modal-plugin` or `yarn add simple-react-modal-plugin`.
 
 ## Usage
 
