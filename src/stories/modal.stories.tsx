@@ -1,6 +1,7 @@
 import React from 'react'
 import { useArgs } from '@storybook/client-api'
 import { ComponentMeta } from '@storybook/react'
+import { action } from '@storybook/addon-actions'
 import Modal from '../index'
 
 export default {
@@ -31,22 +32,36 @@ export default {
 	},
 } as ComponentMeta<typeof Modal>
 
-export const Getting_Started = (args: ComponentMeta<typeof Modal>) => {
+export const Default = (args: ComponentMeta<typeof Modal>) => {
 	const [{ isOpen }, updateArgs] = useArgs()
+	const handleClick = () => updateArgs({ isOpen: !isOpen })
 	return (
 		<>
 			<h1>Modal Tester</h1>
-			<button onClick={() => updateArgs({ isOpen: !isOpen })}>
-				Click me !
-			</button>
+			<button onClick={handleClick}>Click me !</button>
 			{!!isOpen && (
 				<Modal
 					{...args}
-					setModal={() => updateArgs({ isOpen: !isOpen })}
-				>
-					Modal successfully created !
-				</Modal>
+					setModal={handleClick}
+				>Modal successfully created !</Modal>
 			)}
 		</>
 	)
+}
+
+import {within, fireEvent} from "@storybook/testing-library"
+import { expect } from '@storybook/jest'
+
+Default.play = async ({canvasElement}) => {
+
+	const canvas = within(canvasElement)
+
+	await expect(canvas.getByText('Modal Tester')).toBeInTheDocument();
+
+	await canvas.getByText('Click me !')
+
+	await fireEvent.click(canvas.getByRole('button'))
+
+	await expect(canvas.getByText('Modal successfully created !')).toBeInTheDocument();
+
 }
