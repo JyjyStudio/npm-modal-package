@@ -29,16 +29,18 @@
 		"@storybook/builder-webpack4": "^6.5.14",
 		"@storybook/manager-webpack4": "^6.5.14",
 		"@storybook/react": "^6.5.14",
+		"@storybook/test-runner": "^0.9.1",
 		"@storybook/testing-library": "^0.0.13",
-		"@storybook/jest": "0.0.10",
 		"@types/node": "18.11.9",
 		"@types/react": "18.0.24",
 		"@types/react-dom": "18.0.8",
 		"@types/styled-components": "^5.1.26",
+		"@types/testing-library__jest-dom": "^5.14.5",
 		"babel-loader": "^8.3.0",
 		"gh-pages": "^4.0.0",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
+		"react-scripts": "^5.0.1",
 		"styled-components": "5.3.6",
 		"typescript": "4.9.3"
 	},
@@ -53,7 +55,20 @@
 		"predeploy-storybook": "npm run build-storybook",
 		"deploy-storybook": "gh-pages -d storybook-static",
 		"storybook": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
-		"build-storybook": "NODE_OPTIONS=--openssl-legacy-provider build-storybook"
+		"build-storybook": "NODE_OPTIONS=--openssl-legacy-provider build-storybook",
+		"test-storybook": "test-storybook",
+		"test": "react-scripts test",
+		"test:coverage": "react-scripts test --watchAll=false --coverage"
+	},
+	"dependencies": {
+		"@testing-library/jest-dom": "^5.16.5",
+		"@testing-library/react": "^13.4.0",
+		"@testing-library/user-event": "^14.4.3"
+	},
+	"jest": {
+		"coveragePathIgnorePatterns": [
+			"<rootDir>/src/stories/",
+			"<rootDir>/node_modules/"
+		]
 	}
 }
-
