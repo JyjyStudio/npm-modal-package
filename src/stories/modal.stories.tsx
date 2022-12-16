@@ -8,60 +8,50 @@ export default {
 	title: 'LIBRARY/Modal',
 	component: Modal,
 	argTypes: {
-		setModal: {
-			description:
-				'create a state for the component and pass it the setModal prop',
+		hide: {
+			description: 'modal visibility setter function',
 			table: {
-				defaultValue: { summary: 'setModal={setIsOpen}' },
-				disable: true
+				defaultValue: { summary: 'toggle' },
+				type: {
+					summary: 'function',
+					detail: 'const {visible, toggle} = useModal()',
+				},
+				disable: true,
 			},
 		},
-		isOpen: {
-			description: 'modal visibility state',
+		visible: {
+			description: 'modal visibility state value',
 			table: {
 				defaultValue: { summary: false },
 				type: {
 					summary: 'boolean',
-					detail: 'const [isOpen, setIsOpen] = useState(false); ',
+					detail: 'const {visible, toggle} = useModal()',
 				},
 			},
 		},
 	},
 	args: {
-		isOpen: false,
+		visible: false,
 	},
 } as ComponentMeta<typeof Modal>
 
-export const Default = (args: ComponentMeta<typeof Modal>) => {
-	const [{ isOpen }, updateArgs] = useArgs()
-	const handleClick = () => updateArgs({ isOpen: !isOpen })
+export const Default = ({ ...args }: IProps) => {
+	const [{ visible }, updateArgs] = useArgs()
+	const handleClick = () => updateArgs({ visible: !visible })
+
 	return (
 		<>
 			<h1>Modal Tester</h1>
 			<button onClick={handleClick}>Click me !</button>
-			{!!isOpen && (
-				<Modal
-					{...args}
-					setModal={handleClick}
-				>Modal successfully created !</Modal>
-			)}
+			<Modal visible={visible} hide={handleClick}>
+				Modal successfully created !
+			</Modal>
 		</>
 	)
 }
 
-import {within, fireEvent} from "@storybook/testing-library"
-import { expect } from '@storybook/jest'
-
-Default.play = async ({canvasElement}) => {
-
-	const canvas = within(canvasElement)
-
-	await expect(canvas.getByText('Modal Tester')).toBeInTheDocument();
-
-	await canvas.getByText('Click me !')
-
-	await fireEvent.click(canvas.getByRole('button'))
-
-	await expect(canvas.getByText('Modal successfully created !')).toBeInTheDocument();
-
+interface IProps {
+	visible: boolean
+	toggle: Function
+	args: ComponentMeta<typeof Modal>
 }
