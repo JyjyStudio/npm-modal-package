@@ -29,16 +29,16 @@ import Modal from 'simple-react-modal-plugin'
 import useModal from 'simple-react-modal-plugin'
 ```
 
-3.  Create a `<Modal>` component with isShowing and hide props and nest its content inside of it:
+3.  Create a `<Modal>` component with visible and hide props and nest its content inside of it:
 
 ```jsx
 export function AppTester() {
-	const { isShowing, toggle } = useModal()
+	const { visible, toggle } = useModal()
 	return (
 		<>
 			<h1>Modal Tester</h1>
 			<button onClick={toggle}>Click me !</button>
-			<Modal isShowing={isShowing} hide={toggle}>Modal successfully created !</Modal>
+			<Modal visible={visible} hide={toggle}>Modal successfully created !</Modal>
 		</>
 	)
 }
