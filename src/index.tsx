@@ -12,10 +12,12 @@ export const Modal: React.FC<Props> = ({
 }) =>
 	visible
 		? createPortal(
-				<div className="modal">
+				<div className="modal-container" data-testid="modal-container">
 					<Overlay onClick={hide} overlay_color={overlay_color} />
 					<Content modal_color={modal_color}>
-						<CloseIcon onClick={hide}>X</CloseIcon>
+						<CloseIcon data-testid="close-modal-btn" onClick={hide}>
+							X
+						</CloseIcon>
 						<p style={{ color: text_color }}>{children}</p>
 					</Content>
 				</div>,
