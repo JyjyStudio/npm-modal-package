@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import styled from 'styled-components'
 
@@ -9,8 +9,20 @@ export const Modal: React.FC<Props> = ({
 	text_color = 'black',
 	visible,
 	hide,
-}) =>
-	visible
+}) => {
+	const handleKeyDown = useCallback(
+		(e: KeyboardEvent) => {
+			if (e.key === 'Escape') {
+				hide()
+			}
+		},
+		[hide]
+	)
+	useEffect(() => {
+		document.addEventListener('keydown', handleKeyDown)
+		return () => document.removeEventListener('keydown', handleKeyDown)
+	}, [handleKeyDown])
+	return visible
 		? createPortal(
 				<div className="modal-container" data-testid="modal-container">
 					<Overlay onClick={hide} overlay_color={overlay_color} />
@@ -24,6 +36,7 @@ export const Modal: React.FC<Props> = ({
 				document.body
 		  )
 		: null
+}
 
 export default Modal
 export interface Props {
