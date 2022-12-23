@@ -41,4 +41,17 @@ describe('Modal Component', () => {
 		expect(result.current.visible).toBeFalsy()
 		expect(container).toMatchSnapshot()
 	})
+	it('should close the modal by pressing Esc key', () => {
+		const { result } = renderHook(useModal)
+		const mockCallback = jest.fn()
+		const { container } = render(
+			<Modal visible={true} hide={mockCallback}>
+				Modal Content
+			</Modal>
+		)
+		fireEvent.keyDown(container, { key: 'Escape' })
+		expect(mockCallback).toHaveBeenCalledTimes(1)
+		expect(result.current.visible).toBeFalsy()
+		expect(container).toMatchSnapshot()
+	})
 })
