@@ -11,13 +11,10 @@ export const Modal: React.FC<Props> = ({
 	hide,
 }) => {
 	const handleKeyDown = useCallback(
-		(e: KeyboardEvent) => {
-			if (e.key === 'Escape') {
-				hide()
-			}
-		},
+		(e: KeyboardEvent) => e.key === 'Escape' && hide(),
 		[hide]
 	)
+
 	useEffect(() => {
 		document.addEventListener('keydown', handleKeyDown)
 		return () => document.removeEventListener('keydown', handleKeyDown)
