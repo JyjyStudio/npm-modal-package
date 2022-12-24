@@ -37,13 +37,13 @@ export default {
 
 export const Default = ({ ...args }: IProps) => {
 	const [{ visible }, updateArgs] = useArgs()
-	const handleClick = () => updateArgs({ visible: !visible })
+	const handleClick = () => updateArgs({...args, visible: !visible })
 
 	return (
 		<>
 			<h1>Modal Tester</h1>
 			<button onClick={handleClick}>Click me !</button>
-			<Modal visible={visible} hide={handleClick}>
+			<Modal {...args} visible={visible} hide={handleClick}>
 				Modal successfully created !
 			</Modal>
 		</>
