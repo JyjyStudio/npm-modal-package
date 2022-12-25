@@ -34,6 +34,7 @@ The following example consists in a component (`AppTester`) with a button and a 
 The modal is controlled by the `visible` state variable and it is initially hidden, since its value is `false`.  
 Pressing the button sets `visible` to true, making the modal visible.  
 Inside the modal there is another button that, when pressed, sets `visible` to false, hiding the modal.
+You can also close the modal pressing Esc key.
 
 ```javascript
 import React, { useState } from 'react'
