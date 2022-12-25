@@ -1,7 +1,6 @@
 import React from 'react'
 import { useArgs } from '@storybook/client-api'
 import { ComponentMeta } from '@storybook/react'
-import { action } from '@storybook/addon-actions'
 import Modal from '../index'
 
 export default {
