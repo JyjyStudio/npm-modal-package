@@ -23,7 +23,7 @@ import Modal from 'simple-react-modal-plugin'
 2.  Import useModal from simple-react-modal-plugin :
 
 ```js
-import useModal from 'simple-react-modal-plugin'
+import useModal from 'simple-react-modal-plugin/useModal'
 ```
 
 3.  Create a `<Modal>` component with visible and hide props and nest its content inside of it:
@@ -39,7 +39,7 @@ You can also close the modal pressing Esc key.
 ```javascript
 import React, { useState } from 'react'
 import Modal from 'simple-react-modal-plugin'
-import useModal from 'simple-react-modal-plugin'
+import useModal from 'simple-react-modal-plugin/useModal'
 
 function AppTester() {
 	const { isShowing, toggle } = useModal()
