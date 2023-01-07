@@ -10,15 +10,15 @@ export const Modal: React.FC<Props> = ({
 	visible,
 	hide,
 }) => {
-	const handleKeyDown = useCallback(
-		(e: KeyboardEvent) => e.key === 'Escape' && hide(),
-		[hide]
-	)
-
+	const handleKeyDown = useCallback((e:KeyboardEvent) => {
+		if(e.key === 'Escape' && visible) {
+			hide()
+		}
+	}, [hide])
 	useEffect(() => {
 		document.addEventListener('keydown', handleKeyDown)
 		return () => document.removeEventListener('keydown', handleKeyDown)
-	}, [handleKeyDown])
+	}, [hide])
 	return visible
 		? createPortal(
 				<div className="modal-container" data-testid="modal-container">
